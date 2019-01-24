@@ -1,8 +1,7 @@
+# Second part of video deshaker
+
 rm -f stabilized.avi
 rm -f stabilized.mp4
 #ffmpeg2 -i "$1" -vf vidstabtransform=zoom=-2:optzoom=0:crop=black,unsharp=5:5:0.8:3:3:0.4,atadenoise -b:v 10000k  -b:a 64k  stabilized.avi
 ffmpeg2 -i "$1" -vf vidstabtransform=zoom=0:optzoom=1:crop=black,unsharp=5:5:0.8:3:3:0.4,atadenoise -b:v 10000k  -b:a 64k  stabilized.avi
 ffmpeg2 -i "stabilized.avi" -b:v 2000k stabilized.mp4
-
-#rm -f stabilized.mp4
-#ffmpeg2 -i "$1" -vf vidstabtransform=zoom=-2:optzoom=0:crop=black,unsharp=5:5:0.8:3:3:0.4,atadenoise   -b:a 64k  stabilized.mp4
