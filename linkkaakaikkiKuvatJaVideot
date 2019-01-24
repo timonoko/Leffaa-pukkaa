@@ -1,0 +1,45 @@
+rm -Rf /home/tnoko/kakki
+mkdir /home/tnoko/kakki
+
+numero=10000
+
+find . -regex ".*[(\.JPG)|(\.MP4)|(\.AVI)|(\.jpg)|(\.mp4)|(\.mov)|(\.avi)]" | while read fn; do
+ if [ -d "$fn" ] ; then echo Vitut "$fn"
+ else
+#  echo "$fn"
+  aa=$(echo "$fn" | tr " " "_")
+  eka=$(basename "$aa")
+  p=$(pwd)
+  zaka="$p/${fn:2}"
+ echo ln -s "$zaka" /home/tnoko/kakki/"$numero"_"$eka"
+ ln -s "$zaka" /home/tnoko/kakki/"$numero"_"$eka"
+# ln -s "$fn" /home/tnoko/kakki/"$numero"_"$eka"
+# ln -s $p/${fn:1} /home/tnoko/kakki/$eka
+  numero=$((numero+1))
+#  sleep 1
+ fi
+done
+
+
+
+cd /home/tnoko/kakki
+for x in * ; do
+#  iik=$(stat -L -c %Y $x)
+#  aak=${x: -4}
+#   echo $x $iik$aak
+#  mv $x $iik$aak
+  iik=$(exiftool $x | expand | grep "Create Date")
+  aak=${iik:33:20}
+#  echo $aak
+  aak2=${aak//:/}
+  aak3=${aak2//\ /}
+  echo $x $aak3$typ
+  typ=${x: -4}
+  if [ "$aak3"  == "" ] 
+     then echo PASKA
+     else mv $x $aak3$typ 
+   fi
+done
+
+
+#sanity.pl -l *
