@@ -1,5 +1,4 @@
-# Roskia
-Making Movies
+# Making Movies
 
 I realized I have made whole set of tools for autogenerating Youtube-movies from  photos and videos from various
 cameras.
