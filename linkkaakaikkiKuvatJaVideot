@@ -1,14 +1,10 @@
-# This how I organize videos and photos in to timed order into one directory
-# I often do "normalize-like-hunt" after this.
-# Thereafter I load all files into Cinelerra and do some editing
-# And lastly I do the "ffmpeg-deshake"
-# This is the final product: https://youtu.be/UgnFfE_aU18
+# This is how I organize videos and photos into Creation Date 
 
 rm -Rf /home/tnoko/kakki
 mkdir /home/tnoko/kakki
 
+# Make kakki-link for all files in all subdirectories. Make unique name for each link.
 numero=10000
-
 find . -regex ".*[(\.JPG)|(\.MP4)|(\.AVI)|(\.jpg)|(\.mp4)|(\.mov)|(\.avi)]" | while read fn; do
  if [ -d "$fn" ] ; then echo Vitut "$fn"
  else
@@ -26,8 +22,7 @@ find . -regex ".*[(\.JPG)|(\.MP4)|(\.AVI)|(\.jpg)|(\.mp4)|(\.mov)|(\.avi)]" | wh
  fi
 done
 
-
-
+# Use exiftool to find the Creation Date and rename the file accordingly 
 cd /home/tnoko/kakki
 for x in * ; do
 #  iik=$(stat -L -c %Y $x)
@@ -39,13 +34,10 @@ for x in * ; do
 #  echo $aak
   aak2=${aak//:/}
   aak3=${aak2//\ /}
-  echo $x $aak3$typ
   typ=${x: -4}
+  echo $x $aak3$typ
   if [ "$aak3"  == "" ] 
      then echo PASKA
      else mv $x $aak3$typ 
    fi
 done
-
-
-#sanity.pl -l *
