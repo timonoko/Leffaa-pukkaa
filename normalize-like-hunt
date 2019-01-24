@@ -1,0 +1,2 @@
+convert $1 -channel red -normalize -channel green -normalize -channel blue -normalize normalized/$1
+
