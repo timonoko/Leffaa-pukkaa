@@ -1,3 +1,9 @@
+# This how I organize videos and photos in to timed order into one directory
+# I often do "normalize-like-hunt" after this.
+# Thereafter I load all files into Cinerella and do some editing
+# And lastly I do the "ffmpeg-deshake"
+# This is the final product: https://youtu.be/UgnFfE_aU18
+
 rm -Rf /home/tnoko/kakki
 mkdir /home/tnoko/kakki
 
