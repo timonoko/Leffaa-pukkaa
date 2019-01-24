@@ -1,3 +1,6 @@
+# First part of video deshaker. Youtube does not have deshaker anymore.
+# Makes also photo sequence "lively": https://youtu.be/UgnFfE_aU18
+
 rm -f dummy.avi
 rm -f stabilized.avi
 ffmpeg2 -i "$1" -vf vidstabdetect=shakiness=5:show=1 dummy.avi
@@ -5,4 +8,3 @@ ffmpeg2 -i "$1" -vf vidstabdetect=shakiness=5:show=1 dummy.avi
 echo
 echo === JOSSEI TOIMI NIIN: ffmpeg2 -i "$1" -b:v 10000k temp.avi
 echo ffmpeg2 -i "$1" -b:v 10000k temp.avi | xsel -b -i
-
