@@ -1,1 +1,2 @@
+# Titanic noise generator with propellor sounds
 play -c2 -n synth whitenoise band -n 20 40 band -n 200 400 synth triangle amod 3 80 gain +20
