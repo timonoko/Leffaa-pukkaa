@@ -1,4 +1,3 @@
-# Making Movies
 
 I realized I have made a whole set of tools for autogenerating Youtube-movies from  photos and videos from various
 cameras.
