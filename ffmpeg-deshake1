@@ -1,0 +1,8 @@
+rm -f dummy.avi
+rm -f stabilized.avi
+ffmpeg2 -i "$1" -vf vidstabdetect=shakiness=5:show=1 dummy.avi
+#ffmpeg2 -i "$1" -vf vidstabtransform=zoom=0:optzoom=0:crop=black,unsharp=5:5:0.8:3:3:0.4,atadenoise -b:v 2000k -acodec copy stabilized.avi
+echo
+echo === JOSSEI TOIMI NIIN: ffmpeg2 -i "$1" -b:v 10000k temp.avi
+echo ffmpeg2 -i "$1" -b:v 10000k temp.avi | xsel -b -i
+
