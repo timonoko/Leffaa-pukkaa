@@ -1,9 +1,9 @@
-# This is how I organize videos and photos into Creation Date 
+# This is how I organize videos and photos by the Creation Date 
 
 rm -Rf /home/tnoko/kakki
 mkdir /home/tnoko/kakki
 
-# Make kakki-link for all files in all subdirectories. Make unique name for each link.
+# Make a link for all files in all subdirectories. Make unique name for each link.
 numero=10000
 find . -regex ".*[(\.JPG)|(\.MP4)|(\.AVI)|(\.jpg)|(\.mp4)|(\.mov)|(\.avi)]" | while read fn; do
  if [ -d "$fn" ] ; then echo Vitut "$fn"
