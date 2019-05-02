@@ -1,3 +1,4 @@
+#! /bin/bash
 # This is how I organize videos and photos by the Creation Date 
 
 rm -Rf /home/tnoko/kakki
