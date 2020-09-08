@@ -11,3 +11,5 @@ Thereafter I load all files into Cinelerra and do some editing
 And lastly I do the "ffmpeg-deshake1" and "ffmpeg-deshake2"
 
 This is an example of the final product : https://youtu.be/UgnFfE_aU18
+
+BTW. Standard ffmpeg does not have deshaker on it. You have to compile ffmpeg yourself with "vidstab"-options on.
