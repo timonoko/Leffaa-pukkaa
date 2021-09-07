@@ -1,5 +1,5 @@
 # This method of maximizing the color space was by the famous kite aerial photographer Alan Hunt. 
 # He did it manually, but here is it by the Imagemagick. This is an example of the uniform colorspace
-# by this filter: https://youtu.be/UgnFfE_aU18
+# by this filter: <a href=https://youtu.be/UgnFfE_aU18>https://youtu.be/UgnFfE_aU18</a>
 
 convert $1 -channel red -normalize -channel green -normalize -channel blue -normalize normalized/$1
